@@ -37,13 +37,13 @@ Wishlist and Collection: Users can create wish lists for books they plan to read
 
 **Modules/Features:**
 
-1. Authorization & Authentication 
-2. Maintain Wishlist
-3. Write Review/Rating
-4. Search Engine
-5. Write Recommendation
-6. Book Page
-7. Sorting by Book Genre
+1. Authorization & Authentication : Helga
+2. Maintain Wishlist : Pascal
+3. Write Review/Rating : Helga & Adhis
+4. Search Engine : Raisa
+5. Write Recommendation : Adhis
+6. Book Page : Pascal
+7. Sorting by Book Genre : Adhis
 
 **User roles or actors in the application.**
 
@@ -52,5 +52,7 @@ BooksForAll will implement role-based access control with the following user rol
 Registered User: Users with personal accounts. Registered users have personal accounts, allowing them to utilize a wide range of features. They can maintain wishlists, write reviews and ratings, search for books, write recommendations, view detailed book pages, and sort books by genre.
 
 **Integration flow with the web service to connect to the web application created during the Midterm Project.**
+
+To integrate the web services to the web app we would need to setup the authentication on the Django app as well as in the flutter app. More specifically, integrate pbp_django_auth for the flutter app and add http dependency so that data can be fetched from the Django app.
 
 
