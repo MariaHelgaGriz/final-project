@@ -14,3 +14,43 @@ A few resources to get you started if this is your first Flutter project:
 For help getting started with Flutter development, view the
 [online documentation](https://docs.flutter.dev/), which offers tutorials,
 samples, guidance on mobile development, and a full API reference.
+
+## Books For All Application
+
+**Members : Maria Helga Grizelda, Raisa Fadilla, Tiva Adhisti, Pascal Pahlevi**
+
+**Introduction:**
+
+A mobile application designed to address the growing crisis of literacy, especially among Gen Z individuals. Inspired by the alarming statistics that indicate a mere 0.001% interest in reading among Indonesians, BooksForAll aims to make reading more accessible and appealing to the younger generation.
+
+**Benefits:**
+
+Encouraging Literacy: BooksForAll seeks to rekindle the love for reading among Gen Z by providing a user-friendly platform that makes discovering and reading books a delightful experience.
+
+Diverse Book Catalog: The application offers a wide range of books spanning various genres, ensuring that users can find something of interest to them, regardless of their preferences.
+
+Personalized Recommendations: The recommendation feature helps users discover books tailored to their tastes and preferences, making their reading journey more engaging.
+
+User-Friendly Interface: BooksForAll boasts an intuitive and aesthetically pleasing user interface, making it easy for users to navigate and enjoy their reading experience.
+
+Wishlist and Collection: Users can create wish lists for books they plan to read and manage their book collections, keeping track of their reading progress.
+
+**Modules/Features:**
+
+1. Authorization & Authentication 
+2. Maintain Wishlist
+3. Write Review/Rating
+4. Search Engine
+5. Write Recommendation
+6. Book Page
+7. Sorting by Book Genre
+
+**User roles or actors in the application.**
+
+BooksForAll will implement role-based access control with the following user roles:
+
+Registered User: Users with personal accounts. Registered users have personal accounts, allowing them to utilize a wide range of features. They can maintain wishlists, write reviews and ratings, search for books, write recommendations, view detailed book pages, and sort books by genre.
+
+**Integration flow with the web service to connect to the web application created during the Midterm Project.**
+
+
