@@ -1,6 +1,6 @@
-import '/pages/fragments/dashboard_page.dart';
+import 'pages/dashboard_page.dart';
 import 'package:flutter/material.dart';
-import 'models/book.dart';
+import '/models/book.dart';
 import '/pages/intro_page.dart';
 
 void main() {
