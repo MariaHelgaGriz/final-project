@@ -1,8 +1,4 @@
 import 'package:booksforall/models/fragment.dart';
-import 'package:booksforall/pages/fragments/cart_page.dart';
-import 'package:booksforall/pages/fragments/home_page.dart';
-import 'package:booksforall/pages/fragments/qna_page.dart';
-import 'package:booksforall/pages/fragments/wishlist_page.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
