@@ -1,5 +1,6 @@
-import '../../models/fragment.dart';
+import '../models/fragment.dart';
 import 'package:flutter/material.dart';
+import 'package:booksforall/pages/fragments/home_page.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -16,7 +17,7 @@ class _DashboardPageState extends State<DashboardPage> {
     Fragment(
       label: 'Home',
       icon: 'assets/ic_home.png',
-      view: const Scaffold(),
+      view: const HomePage(),
     ),
     Fragment(
       label: 'Wishlist',

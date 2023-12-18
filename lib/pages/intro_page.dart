@@ -1,4 +1,4 @@
-import 'fragments/dashboard_page.dart';
+import 'dashboard_page.dart';
 import 'package:d_session/d_session.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
