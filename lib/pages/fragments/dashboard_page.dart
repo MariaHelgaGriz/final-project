@@ -1,4 +1,4 @@
-import 'package:booksforall/models/fragment.dart';
+import '../../models/fragment.dart';
 import 'package:flutter/material.dart';
 
 class DashboardPage extends StatefulWidget {
@@ -16,22 +16,22 @@ class _DashboardPageState extends State<DashboardPage> {
     Fragment(
       label: 'Home',
       icon: 'assets/ic_home.png',
-      view: const HomePage(),
+      view: const Scaffold(),
     ),
     Fragment(
       label: 'Wishlist',
       icon: 'assets/ic_wishlist.png',
-      view: const WishlistPage(),
+      view: const Scaffold(),
     ),
     Fragment(
       label: 'Cart',
       icon: 'assets/ic_cart.png',
-      view: const CartPage(),
+      view: const Scaffold(),
     ),
     Fragment(
       label: 'QnA',
       icon: 'assets/ic_qna.png',
-      view: const QnaPage(),
+      view: const Scaffold(),
     ),
   ];
 
