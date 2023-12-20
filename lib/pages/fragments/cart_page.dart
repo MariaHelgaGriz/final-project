@@ -7,7 +7,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
 import '../../common/enum.dart';
-
+import '../../models/book.dart';
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
@@ -158,14 +158,7 @@ class _CartPageState extends State<CartPage> {
           backgroundColor: Theme.of(context).primaryColor,
           contentPadding: const EdgeInsets.fromLTRB(24, 34, 24, 30),
           children: [
-            const Text(
-              'Are you sure want to check out?',
-              textAlign: TextAlign.center,
-              style: TextStyle(
-                color: Colors.white,
-                fontSize: 24,
-                fontWeight: FontWeight.bold,
-              ),
+           
             ),
             const Gap(30),
             DButtonFlat(
