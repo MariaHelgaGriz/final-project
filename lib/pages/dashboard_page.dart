@@ -1,7 +1,10 @@
-import '../models/fragment.dart';
-import 'package:flutter/material.dart';
+import 'package:booksforall/models/fragment.dart';
+import 'package:booksforall/pages/fragments/cart_page.dart';
 import 'package:booksforall/pages/fragments/home_page.dart';
 import 'package:booksforall/pages/fragments/qna_page.dart';
+import 'package:booksforall/pages/fragments/wishlist_page.dart';
+import 'package:flutter/material.dart';
+import 'package:get/get.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
@@ -12,7 +15,7 @@ class DashboardPage extends StatefulWidget {
 }
 
 class _DashboardPageState extends State<DashboardPage> {
-  final index = ValueNotifier(0);
+  final indexFragment = 0.obs;
 
   final fragments = [
     Fragment(
@@ -23,41 +26,33 @@ class _DashboardPageState extends State<DashboardPage> {
     Fragment(
       label: 'Wishlist',
       icon: 'assets/ic_wishlist.png',
-      view: const Scaffold(),
+      view: const WishlistPage(),
     ),
     Fragment(
       label: 'Cart',
       icon: 'assets/ic_cart.png',
-      view: const Scaffold(),
+      view: const CartPage(),
     ),
     Fragment(
       label: 'QnA',
       icon: 'assets/ic_qna.png',
-      view: const Scaffold(),
+      view: const QnaPage(),
     ),
   ];
 
   @override
-  void dispose() {
-    index.dispose();
-    super.dispose();
-  }
-
-  @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: ListenableBuilder(
-        listenable: index,
-        builder: (context, child) {
-          return fragments[index.value].view;
+      body: Obx(
+        () {
+          return fragments[indexFragment.value].view;
         },
       ),
-      bottomNavigationBar: ListenableBuilder(
-        listenable: index,
-        builder: (context, child) {
+      bottomNavigationBar: Obx(
+        () {
           return BottomNavigationBar(
-            currentIndex: index.value,
-            onTap: (n) => index.value = n,
+            currentIndex: indexFragment.value,
+            onTap: (n) => indexFragment.value = n,
             selectedItemColor: Theme.of(context).primaryColor,
             unselectedItemColor: Colors.grey,
             selectedFontSize: 12,
