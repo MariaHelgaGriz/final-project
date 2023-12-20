@@ -1,9 +1,13 @@
 import 'package:booksforall/widgets/input_basic.dart';
 import 'package:booksforall/widgets/input_password.dart';
 import 'package:d_button/d_button.dart';
+import 'package:d_view/d_view.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
 import 'package:google_fonts/google_fonts.dart';
+
+import '../common/app_notif.dart';
+import '../source/auth_source.dart';
 
 class RegisterPage extends StatefulWidget {
   const RegisterPage({super.key});
@@ -15,10 +19,40 @@ class RegisterPage extends StatefulWidget {
 
 class _RegisterPageState extends State<RegisterPage> {
   final edtUsername = TextEditingController();
-  final edtEmail = TextEditingController();
   final edtPassword = TextEditingController();
+  final loading = ValueNotifier(false);
 
-  register() {}
+  register() {
+    // if dummmy, use this:
+    // Navigator.pushReplacementNamed(context, DashboardPage.route);
+    //
+    // not this:
+    String username = edtUsername.text;
+    String password = edtPassword.text;
+    if (username == '') {
+      return AppNotif.invalid(context, 'Username must be filled');
+    }
+    if (password == '') {
+      return AppNotif.invalid(context, 'Password must be filled');
+    }
+    loading.value = true;
+    AuthSource.register(
+      edtUsername.text,
+      edtPassword.text,
+    ).then((result) {
+      result.fold(
+        (messageFailed) {
+          loading.value = false;
+          AppNotif.failed(context, messageFailed);
+        },
+        (messageSuccess) {
+          loading.value = false;
+          AppNotif.success(context, messageSuccess);
+          Navigator.pop(context); // back to LoginPage
+        },
+      );
+    });
+  }
 
   @override
   Widget build(BuildContext context) {
@@ -58,19 +92,7 @@ class _RegisterPageState extends State<RegisterPage> {
           const Gap(8),
           InputBasic(
             editingController: edtUsername,
-            hint: 'Your Email',
-          ),
-          const Gap(20),
-          const Text(
-            'Email',
-            style: TextStyle(
-              fontWeight: FontWeight.bold,
-            ),
-          ),
-          const Gap(8),
-          InputBasic(
-            editingController: edtEmail,
-            hint: 'Your Email',
+            hint: 'Your Username',
           ),
           const Gap(20),
           const Text(
@@ -85,18 +107,25 @@ class _RegisterPageState extends State<RegisterPage> {
             hint: 'Your Password',
           ),
           const Gap(30),
-          DButtonFlat(
-            onClick: () {},
-            radius: 30,
-            height: 48,
-            mainColor: Theme.of(context).primaryColor,
-            child: const Text(
-              'Register',
-              style: TextStyle(
-                fontWeight: FontWeight.w500,
-                color: Colors.white,
+          ListenableBuilder(
+            listenable: loading,
+            child: DButtonFlat(
+              onClick: () => register(),
+              radius: 30,
+              height: 48,
+              mainColor: Theme.of(context).primaryColor,
+              child: const Text(
+                'Register',
+                style: TextStyle(
+                  fontWeight: FontWeight.w500,
+                  color: Colors.white,
+                ),
               ),
             ),
+            builder: (context, child) {
+              if (loading.value) return DView.loadingCircle();
+              return child!;
+            },
           ),
           const Gap(16),
           Row(
