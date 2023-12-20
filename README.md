@@ -44,12 +44,16 @@ Wishlist and Collection: Users can create wish lists for books they plan to read
 5. Write Recommendation : Adhis
 6. Book Page : Pascal
 7. Sorting by Book Genre : Adhis
+8. Carousel : Pascal
+9. Home Page : Adhis
+10. Qna Page : Raisa
+11. Profile Page : Raisa
 
 **User roles or actors in the application.**
 
 BooksForAll will implement role-based access control with the following user roles:
 
-Registered User: Users with personal accounts. Registered users have personal accounts, allowing them to utilize a wide range of features. They can maintain wishlists, write reviews and ratings, search for books, write recommendations, view detailed book pages, and sort books by genre.
+Registered User: Users with personal accounts. Registered users have personal accounts, allowing them to utilize a wide range of features. They can maintain wishlists, write reviews, write recommendations, view detailed book pages, and sort books by genre.
 
 **Integration flow with the web service to connect to the web application created during the Midterm Project.**
 
