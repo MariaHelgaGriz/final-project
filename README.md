@@ -53,7 +53,7 @@ Wishlist and Collection: Users can create wish lists for books they plan to read
 
 BooksForAll will implement role-based access control with the following user roles:
 
-Registered User: Users with personal accounts. Registered users have personal accounts, allowing them to utilize a wide range of features. They can maintain wishlists, write reviews, write recommendations, view detailed book pages, and sort books by genre.
+Registered User: Users with personal accounts. Registered users have personal accounts, allowing them to utilize a wide range of features. They can maintain wishlists, write reviews, write QnA, view detailed book pages, and sort books by genre.
 
 **Integration flow with the web service to connect to the web application created during the Midterm Project.**
 
