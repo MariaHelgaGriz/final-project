@@ -1,6 +1,7 @@
 import '../models/fragment.dart';
 import 'package:flutter/material.dart';
 import 'package:booksforall/pages/fragments/home_page.dart';
+import 'package:booksforall/pages/fragments/qna_page.dart';
 
 class DashboardPage extends StatefulWidget {
   const DashboardPage({super.key});
