@@ -1,21 +1,29 @@
 import 'dart:convert';
-import 'package:booksforall/models/qna.dart';
+import 'package:booksforall/models/question.dart';
 import 'package:d_method/d_method.dart';
+import 'package:d_session/d_session.dart';
 import 'package:dartz/dartz.dart';
 import 'package:http/http.dart' as http;
 
 class QnaSource {
-  static Future<Either<String, List<Qna>>> all() async {
+  static Future<Either<String, List<Question>>> all() async {
     String url = 'http://127.0.0.1:8000/api/v1/get/get_question_answer/';
     try {
-      final response = await http.get(Uri.parse(url));
+      String sessionId = await DSession.getCustom('session_id');
+      final response = await http.get(Uri.parse(url), headers: {
+        'cookie': sessionId,
+      });
       DMethod.logResponse(response);
 
       if (response.statusCode == 200) {
         final resBody = jsonDecode(response.body);
-        List list = resBody['qna_list'];
+        List list = resBody['question_answer_list'];
         return Right(
-          list.map((e) => Qna.fromJson(e)).toList(),
+          list.map((e) {
+            int id = e['pk'];
+            final question = e['fields'];
+            return Question.fromJson(question, id);
+          }).toList(),
         );
       }
       return const Left('Server error');
