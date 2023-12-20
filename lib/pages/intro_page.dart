@@ -1,4 +1,5 @@
-import 'dashboard_page.dart';
+import 'package:booksforall/pages/dashboard_page.dart';
+import 'package:booksforall/pages/login_page.dart';
 import 'package:d_session/d_session.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
@@ -16,7 +17,11 @@ class _IntroPageState extends State<IntroPage> {
     SystemChrome.setEnabledSystemUIMode(SystemUiMode.edgeToEdge);
     Future.delayed(const Duration(milliseconds: 2000), () {
       DSession.getUser().then((user) {
-        Navigator.pushReplacementNamed(context, DashboardPage.route);
+        if (user == null) {
+          Navigator.pushReplacementNamed(context, LoginPage.route);
+        } else {
+          Navigator.pushReplacementNamed(context, DashboardPage.route);
+        }
       });
     });
     super.initState();
