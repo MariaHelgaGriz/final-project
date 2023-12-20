@@ -158,7 +158,14 @@ class _CartPageState extends State<CartPage> {
           backgroundColor: Theme.of(context).primaryColor,
           contentPadding: const EdgeInsets.fromLTRB(24, 34, 24, 30),
           children: [
-           
+            const Text(
+              'Are you sure want to check out?',
+              textAlign: TextAlign.center,
+              style: TextStyle(
+                color: Colors.white,
+                fontSize: 24,
+                fontWeight: FontWeight.bold,
+              ),
             ),
             const Gap(30),
             DButtonFlat(
