@@ -1,7 +1,7 @@
 import 'package:booksforall/pages/dashboard_page.dart';
 import 'package:booksforall/pages/register_page.dart';
 import 'package:booksforall/widgets/input_basic.dart';
-import 'package:booksforall/widgets/input_passwords.dart';
+import 'package:booksforall/widgets/input_password.dart';
 import 'package:d_button/d_button.dart';
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
