@@ -1,11 +1,16 @@
-class Qna {
-  final String reviewForm;
-  final String review;
+import 'package:booksforall/models/answer.dart';
+import 'package:booksforall/models/question.dart';
 
-  Qna({required this.reviewForm, required this.review});
+// class QnA {
+//   final Question question;
+//   final List<Answer> answerList;
 
-  factory Qna.fromJson(Map<String, dynamic> json) => Qna(
-        reviewForm: json['reviewForm'],
-        review: json['review'],
-      );
-}
+//   QnA({required this.question, required this.answerList});
+
+//   factory QnA.fromJson(Map<String, dynamic> json) {
+//     return QnA(
+//       question: json['question'][0],
+//       answerList: json['answer_list'].map((e)).toList(),
+//     );
+//   }
+// }
