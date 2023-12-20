@@ -7,7 +7,7 @@ import 'package:gap/gap.dart';
 import 'package:get/get.dart';
 
 import '../../common/enum.dart';
-import '../../models/book.dart';
+
 
 class CartPage extends StatefulWidget {
   const CartPage({super.key});
