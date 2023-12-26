@@ -19,6 +19,8 @@ samples, guidance on mobile development, and a full API reference.
 
 **Members : Maria Helga Grizelda, Raisa Fadilla, Tiva Adhisti, Pascal Pahlevi**
 
+APK Link: [![Build status](https://build.appcenter.ms/v0.1/apps/41a309c6-3acb-441d-8275-c92b6f802515/branches/master/badge)](https://appcenter.ms)
+
 **Introduction:**
 
 A mobile application designed to address the growing crisis of literacy, especially among Gen Z individuals. Inspired by the alarming statistics that indicate a mere 0.001% interest in reading among Indonesians, BooksForAll aims to make reading more accessible and appealing to the younger generation.
